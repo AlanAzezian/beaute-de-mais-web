@@ -1,27 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black: #0a0a0a;
+  --white: #fafaf8;
+  --lavender: #c9a8d4;
+  --lavender-deep: #9b6fae;
+  --dark-gray: #1a1a1a;
+  --mid-gray: #888;
+  --border: rgba(201, 168, 212, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Jost', sans-serif;
+  background: #0a0a0a;
+  color: #fafaf8;
+  font-weight: 300;
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Snap Scroll */
+.snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* For sections that need to exceed 100vh (like gallery/services) */
+.snap-section-auto {
+  scroll-snap-align: start;
+  min-height: 100vh;
+}
+
+/* Location card selection */
+.location-card {
+  border: 1px solid rgba(201, 168, 212, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.location-card:hover {
+  border-color: rgba(201, 168, 212, 0.4);
+  background: rgba(201, 168, 212, 0.04);
+}
+
+.location-card.active {
+  border-color: #c9a8d4;
+  background: rgba(201, 168, 212, 0.08);
+  box-shadow: 0 0 20px rgba(201, 168, 212, 0.12), inset 0 0 20px rgba(201, 168, 212, 0.04);
+}
+
+/* Reveal animation on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Opacity 0 on initial load for animated elements */
+.opacity-anim {
+  opacity: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 212, 0.3);
+}
+
+/* Table specific styles for services */
+.services-table th,
+.services-table td {
+  border-color: rgba(201, 168, 212, 0.15);
+}
+
+/* FAQ accordion transition */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-content.open {
+  max-height: 500px;
 }
