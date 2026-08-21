@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💅 Beauté de Maïs - Landing Page & Web App
 
-## Getting Started
+Sitio web oficial y plataforma de reservas para **Beauté de Maïs**, estudio profesional de manicuría y estética de uñas. Diseñado con una interfaz moderna, elegante y de alto impacto visual orientada a la conversión y experiencia de usuario fluida.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Características Principales
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **🎨 Diseño Exclusivo y Elegante:** Paleta de colores sobria y minimalista (tonos lavanda y oscuros) pensada para la identidad de marca del estudio.
+* **📱 Experiencia Fluida (Snap Scroll):** Navegación inmersiva entre secciones con animaciones y transiciones optimizadas.
+* **📍 Selector de Ubicación Interactivo:** Contexto global para que las clientas elijan la sede de atención (Palermo, Cabañitas, Particular).
+* **💬 Reserva Directa por WhatsApp:** Enlaces dinámicos hacia la API de WhatsApp con mensajes preformateados listos para agendar turnos sin fricción.
+* **💅 Catálogo y Lista de Precios:** Módulo de servicios detallados (kapping, soft gel, semipermanente, nail art) y galería de trabajos realizados.
+* **⚡ Carga Ultrarrápida e Íconos SVG Nativos:** Sin dependencias pesadas de UI, optimizado para rendimiento mobile.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Stack Tecnológico
 
-## Learn More
+* **Framework:** Next.js 14 (App Router)
+* **Core:** React 18 & TypeScript 5
+* **Estilos:** Tailwind CSS con configuración personalizada de tipografías y colores
+* **Gestión de Estado:** React Context API (`LocationContext`)
+* **Despliegue sugerido:** Vercel / Netlify
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Instalación y Desarrollo Local
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/AlanAzezian/beaute-de-mais-web.git
+   cd beaute-de-mais-web
+   ```
 
-## Deploy on Vercel
+2. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Iniciar el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Abrir http://localhost:3000 en el navegador.
+
+## 🔮 Próximas Funcionalidades (Roadmap)
+- [ ] Sistema de autenticación para panel de administración.
+- [ ] Base de datos de turnos y disponibilidad horaria en tiempo real.
+- [ ] Dashboard interactivo de métricas y gestión de citas.
