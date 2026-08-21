@@ -20,7 +20,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -31,26 +31,20 @@ body {
   overflow-x: hidden;
 }
 
-/* Snap Scroll */
+/* Custom JS Scroll Sections */
 .snap-container {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+  width: 100%;
+  transform: translateZ(0);
 }
 
-.snap-section {
-  scroll-snap-align: start;
-  min-height: 100vh;
+.scroll-section {
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-/* For sections that need to exceed 100vh (like gallery/services) */
-.snap-section-auto {
-  scroll-snap-align: start;
-  min-height: 100vh;
+  position: relative;
+  will-change: transform;
 }
 
 /* Location card selection */
@@ -92,9 +86,11 @@ body {
 ::-webkit-scrollbar {
   width: 4px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0a0a0a;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(201, 168, 212, 0.3);
 }

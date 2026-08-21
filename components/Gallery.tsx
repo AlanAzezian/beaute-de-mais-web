@@ -141,7 +141,7 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="px-5 py-20 md:px-[60px] md:py-[120px] border-t"
+      className="px-5 py-10 md:px-[60px] md:py-[60px] border-t flex flex-col h-[100vh] overflow-hidden"
       style={{ borderColor: 'rgba(201,168,212,0.2)' }}
     >
       {/* Header */}
@@ -174,11 +174,10 @@ export default function Gallery() {
           <button
             key={t.key}
             onClick={() => setActiveTab(t.key)}
-            className={`px-5 py-2 text-[0.62rem] tracking-[0.2em] uppercase border cursor-pointer transition-all duration-300 ${
-              activeTab === t.key
+            className={`px-5 py-2 text-[0.62rem] tracking-[0.2em] uppercase border cursor-pointer transition-all duration-300 ${activeTab === t.key
                 ? 'bg-lavender text-site-black border-lavender'
                 : 'bg-transparent text-mid-gray hover:text-site-white hover:border-site-white'
-            }`}
+              }`}
             style={{ borderColor: activeTab === t.key ? undefined : 'rgba(201,168,212,0.2)' }}
           >
             {t.label}
@@ -189,13 +188,16 @@ export default function Gallery() {
       {/* Photo Grid */}
       <div
         ref={gridRef}
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
+        className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 flex-grow min-h-0"
+        style={{
+          gridAutoRows: 'minmax(0, 1fr)'
+        }}
       >
         {filtered.map((photo) => (
           <div
             key={photo.src}
-            className="relative overflow-hidden group cursor-pointer"
-            style={{ aspectRatio: '3/4', background: '#1a1a1a' }}
+            className="relative overflow-hidden group cursor-pointer w-full h-full rounded-sm"
+            style={{ background: '#1a1a1a', maxHeight: '100%' }}
           >
             <Image
               src={photo.src}

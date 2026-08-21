@@ -35,7 +35,7 @@ const config: Config = {
         },
         marqueeScroll: {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(-100%)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -49,7 +49,7 @@ const config: Config = {
         'fade-up-delay-3': 'fadeUp 1s 0.8s ease forwards',
         'fade-up-delay-4': 'fadeUp 1s 1s ease forwards',
         'fade-in-delay': 'fadeIn 1.5s 1.2s ease forwards',
-        'marquee': 'marqueeScroll 20s linear infinite',
+        'marquee': 'marqueeScroll 30s linear infinite',
         'float': 'float 4s ease-in-out infinite',
       },
     },

@@ -67,25 +67,53 @@ export default function Hero() {
               'linear-gradient(to right, #0a0a0a 0%, transparent 40%)',
           }}
         />
+        {/* Wireframe Logo */}
         <svg
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] opacity-0 animate-fade-in-delay"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] md:w-[75%] opacity-0 animate-fade-in-delay pointer-events-none"
           style={{ animationFillMode: 'forwards' }}
           viewBox="0 0 400 500"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <ellipse cx="200" cy="350" rx="80" ry="120" fill="none" stroke="rgba(201,168,212,0.15)" strokeWidth="1" />
-          <ellipse cx="200" cy="350" rx="60" ry="100" fill="none" stroke="rgba(201,168,212,0.1)" strokeWidth="1" />
-          <text x="200" y="200" textAnchor="middle" fontFamily="Cormorant Garamond" fontSize="180" fill="none" stroke="rgba(201,168,212,0.12)" strokeWidth="1" fontWeight="300">A</text>
-          <circle cx="280" cy="160" r="40" fill="none" stroke="rgba(201,168,212,0.08)" strokeWidth="1" />
-          <circle cx="280" cy="160" r="28" fill="rgba(155,111,174,0.05)" />
-          <circle cx="280" cy="160" r="16" fill="rgba(201,168,212,0.08)" />
-          <path d="M120 100 L124 108 L132 112 L124 116 L120 124 L116 116 L108 112 L116 108Z" fill="rgba(201,168,212,0.3)" />
-          <path d="M320 300 L323 306 L329 309 L323 312 L320 318 L317 312 L311 309 L317 306Z" fill="rgba(201,168,212,0.2)" />
-          <path d="M80 280 L82 284 L86 286 L82 288 L80 292 L78 288 L74 286 L78 284Z" fill="rgba(201,168,212,0.25)" />
-          <path d="M160 240 Q160 180 200 160 Q240 180 240 240 L240 420 Q240 455 200 460 Q160 455 160 420Z" fill="none" stroke="rgba(201,168,212,0.12)" strokeWidth="1.5" />
-          <path d="M170 380 Q200 375 230 380" stroke="rgba(201,168,212,0.2)" strokeWidth="1" />
-          <path d="M165 390 Q200 384 235 390" stroke="rgba(201,168,212,0.15)" strokeWidth="1" />
+          {/* Base A - Left Thick Leg */}
+          <polygon points="210,100 120,380 160,380 240,100" stroke="rgba(201,168,212,0.2)" strokeWidth="1.5" fill="rgba(201,168,212,0.02)" />
+          {/* Base A - Right Thin Leg */}
+          <polygon points="225,100 280,260 295,260 240,100" stroke="rgba(201,168,212,0.2)" strokeWidth="1.5" fill="none" />
+
+          {/* Curve Text */}
+          <path id="textCurve" d="M 60 330 C 40 220, 100 130, 180 80" fill="none" stroke="none" />
+          <text fontSize="22" fill="rgba(201,168,212,0.25)" letterSpacing="3" fontFamily="Cormorant Garamond, serif" fontWeight="300">
+            <textPath href="#textCurve" startOffset="0%">BEAUTÉ DES MAINS</textPath>
+          </text>
+
+          {/* Stem */}
+          <path d="M 120 420 Q 150 280 270 260" stroke="rgba(201,168,212,0.25)" strokeWidth="2" fill="none" />
+
+          {/* Stem Leaf */}
+          <path d="M 152 355 Q 120 330 90 320 Q 120 340 148 375" stroke="rgba(201,168,212,0.25)" strokeWidth="1.5" fill="rgba(201,168,212,0.03)" />
+          <path d="M 90 320 Q 130 350 150 365" stroke="rgba(201,168,212,0.15)" strokeWidth="1" fill="none" />
+
+          {/* Flower Petals Base/Receptacle */}
+          <path d="M 260 270 Q 250 275 245 260 Q 260 245 270 250" stroke="rgba(201,168,212,0.3)" strokeWidth="1.5" fill="rgba(201,168,212,0.05)" />
+          <path d="M 260 270 Q 265 285 255 295" stroke="rgba(201,168,212,0.3)" strokeWidth="1.5" fill="none" />
+
+          {/* Top Petal */}
+          <path d="M 265 255 C 265 200, 310 190, 320 230 C 315 250, 280 260, 265 255" stroke="rgba(201,168,212,0.25)" strokeWidth="1.5" fill="rgba(201,168,212,0.02)" />
+          {/* Right Petal */}
+          <path d="M 270 255 C 310 240, 360 220, 350 270 C 340 300, 290 280, 270 255" stroke="rgba(201,168,212,0.25)" strokeWidth="1.5" fill="rgba(201,168,212,0.04)" />
+          {/* Bottom Petal */}
+          <path d="M 265 260 C 290 280, 340 330, 310 350 C 280 350, 250 290, 265 260" stroke="rgba(201,168,212,0.25)" strokeWidth="1.5" fill="rgba(201,168,212,0.03)" />
+
+          {/* Petal details (lines inside) */}
+          <path d="M 275 250 Q 295 220 310 215" stroke="rgba(201,168,212,0.15)" strokeWidth="1" fill="none" />
+          <path d="M 280 260 Q 320 250 335 255" stroke="rgba(201,168,212,0.15)" strokeWidth="1" fill="none" />
+          <path d="M 275 270 Q 300 310 310 320" stroke="rgba(201,168,212,0.15)" strokeWidth="1" fill="none" />
+
+          {/* Extra floating aesthetics */}
+          <circle cx="100" cy="180" r="1" fill="rgba(201,168,212,0.4)" />
+          <circle cx="340" cy="150" r="1.5" fill="rgba(201,168,212,0.3)" />
+          <circle cx="80" cy="400" r="2" fill="rgba(201,168,212,0.2)" />
+          <circle cx="320" cy="420" r="1" fill="rgba(201,168,212,0.3)" />
         </svg>
       </div>
     </section>
